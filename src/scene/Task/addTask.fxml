@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scene.Task.AddTask">
+   <children>
+      <JFXTextField layoutX="27.0" layoutY="45.0" prefHeight="24.0" prefWidth="446.0" promptText="Task" />
+      <AnchorPane layoutX="27.0" layoutY="84.0" prefHeight="480.0" prefWidth="446.0">
+         <children>
+            <JFXTextField layoutY="21.0" promptText="Start Date" />
+            <JFXTextField layoutX="260.0" layoutY="22.0" promptText="Start Time" />
+            <JFXTextField layoutY="67.0" promptText="End Date" />
+            <JFXTextField layoutX="260.0" layoutY="68.0" promptText="End Time" />
+            <JFXTextField layoutY="110.0" promptText="Priority" />
+            <JFXTextField layoutY="150.0" promptText="List" />
+            <JFXTextField layoutY="191.0" promptText="Location" />
+            <JFXTextField layoutX="260.0" layoutY="111.0" promptText="Repeat" />
+            <JFXTextField layoutX="260.0" layoutY="151.0" promptText="People" />
+            <JFXButton accessibleRole="CONTEXT_MENU" layoutX="161.0" layoutY="20.0" prefHeight="15.0" prefWidth="31.0" style="-fx-background-image: url(../../resources/images/icon/calendar.png);" text="Button" textFill="#ff1616" />
+            <JFXButton accessibleRole="CONTEXT_MENU" layoutX="161.0" layoutY="66.0" prefHeight="26.0" prefWidth="30.0" text="Button" textFill="#ff1616" />
+            <JFXButton accessibleRole="COMBO_BOX" layoutX="161.0" layoutY="109.0" prefHeight="26.0" prefWidth="30.0" text="Button" textFill="#ff1616" />
+            <JFXButton accessibleRole="COMBO_BOX" layoutX="161.0" layoutY="149.0" prefHeight="26.0" prefWidth="30.0" text="Button" textFill="#ff1616" />
+            <JFXButton accessibleRole="CONTEXT_MENU" layoutX="161.0" layoutY="190.0" prefHeight="26.0" prefWidth="30.0" text="Button" textFill="#ff1616" />
+            <JFXButton layoutX="36.0" layoutY="388.0" style="-fx-background-color: #66bab7;" text="Cancel" />
+            <JFXButton layoutX="311.0" layoutY="388.0" prefHeight="26.0" prefWidth="63.0" style="-fx-background-color: #66bab7;" text="Add" />
+            <JFXButton accessibleRole="CONTEXT_MENU" layoutX="415.0" layoutY="21.0" prefHeight="26.0" prefWidth="30.0" text="Button" textFill="#ff1616" />
+            <JFXButton accessibleRole="CONTEXT_MENU" layoutX="415.0" layoutY="67.0" prefHeight="26.0" prefWidth="30.0" text="Button" textFill="#ff1616" />
+            <JFXButton accessibleRole="CONTEXT_MENU" layoutX="415.0" layoutY="110.0" prefHeight="26.0" prefWidth="30.0" text="Button" textFill="#ff1616" />
+            <JFXButton accessibleRole="CONTEXT_MENU" layoutX="415.0" layoutY="150.0" prefHeight="26.0" prefWidth="30.0" text="Button" textFill="#ff1616" />
+         </children>
+      </AnchorPane>
+      <CheckBox mnemonicParsing="false" text="CheckBox" />
+   </children>
+</AnchorPane>

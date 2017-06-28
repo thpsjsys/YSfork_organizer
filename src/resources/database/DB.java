@@ -31,6 +31,7 @@ public class DB {
         return null;
 
     }
+
     public void update(String query){
         Connection connection = openConnection();
         Statement statement=null;
