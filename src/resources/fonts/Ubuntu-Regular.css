@@ -1,0 +1,6 @@
+.text{
+    -fx-font-family: 'Ubuntu Regular';
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-font-smoothing-type: gray;
+}
