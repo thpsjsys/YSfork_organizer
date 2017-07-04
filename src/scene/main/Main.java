@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
@@ -18,8 +19,15 @@ public class Main extends Application {
 
         Scene scene = new Scene(root);
 
-        // Set scene decoration
+        // Set scene title
         primaryStage.setTitle("CCA Organizer");
+
+        // Set scene icon
+        primaryStage.getIcons().addAll(
+                new Image(getClass().getResourceAsStream("../../resources/images/icon_64x64.png")),
+                new Image(getClass().getResourceAsStream("../../resources/images/icon_32x32.png")),
+                new Image(getClass().getResourceAsStream("../../resources/images/icon_16x16.png"))
+        );
 
         // Load custom fonts
         Font.loadFont(getClass().getResourceAsStream("../../resources/fonts/Ubuntu-Regular.ttf"), 12);
