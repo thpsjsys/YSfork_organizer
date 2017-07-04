@@ -10,8 +10,7 @@ import java.util.List;
  */
 public class DB {
     private final String DRIVER="com.mysql.jdbc.Driver";
-    //private final String DATABASE_URL="jdbc:mysql://localhost:3306/organizer?useSSL=false";
-    private final String DATABASE_URL="jdbc:mysql://172.27.186.99:3306/organizer?useSSL=false";
+    private final String DATABASE_URL="jdbc:mysql://localhost:3306/organizer?useSSL=false";
 
     private String userName="user";
     private String password="Password&&123H";
@@ -32,6 +31,7 @@ public class DB {
         return null;
 
     }
+
     public void update(String query){
         Connection connection = openConnection();
         Statement statement=null;
