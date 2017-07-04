@@ -29,7 +29,7 @@
                      <graphic>
                         <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../resources/images/ic_home_white_48dp_2x.png" />
+                              <Image url="@../../resources/images/home.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -39,7 +39,17 @@
                      <graphic>
                         <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../resources/images/ic_date_range_white_48dp_2x.png" />
+                              <Image url="@../../resources/images/calendar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+                  <AnchorPane prefHeight="12.0" />
+                  <ToggleButton mnemonicParsing="false" onAction="#eventClick" prefHeight="63.0" prefWidth="63.0" toggleGroup="$menuBar">
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resources/images/event.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -49,13 +59,22 @@
                      <graphic>
                         <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../resources/images/ic_content_paste_white_48dp_2x.png" />
+                              <Image url="@../../resources/images/task.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </ToggleButton>
                </children>
             </VBox>
+            <ToggleButton layoutY="635.0" mnemonicParsing="false" onAction="#profileClick" prefHeight="63.0" prefWidth="63.0" textFill="WHITE" toggleGroup="$menuBar">
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resources/images/profile.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </ToggleButton>
             <Button id="logoutBtn" layoutY="698.0" mnemonicParsing="false" onAction="#logoutClick" style="-fx-padding: 13px;">
                <graphic>
                   <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">

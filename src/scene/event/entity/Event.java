@@ -10,19 +10,31 @@ public class Event {
     private String eventTitle;
     private int eventID;
     private String eventDesc;
-    private GregorianCalendar startDate;
-    private GregorianCalendar endDate;
+    private GregorianCalendar dateOfEvent;
     private Time startTime;
     private Time endTime;
+    private boolean isApproved;
 
-    public Event(String eventTitle, int eventID, String eventDesc, GregorianCalendar startDate, GregorianCalendar endDate, Time startTime, Time endTime) {
+    public Event() {
+    }
+
+    public Event(String eventTitle, int eventID, String eventDesc, GregorianCalendar dateOfEvent, Time startTime, Time endTime) {
         this.eventTitle = eventTitle;
         this.eventID = eventID;
         this.eventDesc = eventDesc;
-        this.startDate = startDate;
-        this.endDate = endDate;
+        this.dateOfEvent = dateOfEvent;
         this.startTime = startTime;
         this.endTime = endTime;
+    }
+
+    public Event(String eventTitle, int eventID, String eventDesc, GregorianCalendar dateOfEvent, Time startTime, Time endTime, boolean isApproved) {
+        this.eventTitle = eventTitle;
+        this.eventID = eventID;
+        this.eventDesc = eventDesc;
+        this.dateOfEvent = dateOfEvent;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.isApproved = isApproved;
     }
 
     public String getEventTitle() {
@@ -49,20 +61,12 @@ public class Event {
         this.eventDesc = eventDesc;
     }
 
-    public GregorianCalendar getStartDate() {
-        return startDate;
+    public GregorianCalendar getDateOfEvent() {
+        return dateOfEvent;
     }
 
-    public void setStartDate(GregorianCalendar startDate) {
-        this.startDate = startDate;
-    }
-
-    public GregorianCalendar getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(GregorianCalendar endDate) {
-        this.endDate = endDate;
+    public void setDateOfEvent(GregorianCalendar dateOfEvent) {
+        this.dateOfEvent = dateOfEvent;
     }
 
     public Time getStartTime() {
@@ -79,5 +83,13 @@ public class Event {
 
     public void setEndTime(Time endTime) {
         this.endTime = endTime;
+    }
+
+    public boolean isApproved() {
+        return isApproved;
+    }
+
+    public void setApproved(boolean approved) {
+        isApproved = approved;
     }
 }
