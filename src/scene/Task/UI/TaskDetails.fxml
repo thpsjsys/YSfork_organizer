@@ -20,7 +20,7 @@
                   <DropShadow />
                </effect>
                <children>
-                  <Label layoutX="379.0" layoutY="45.0" text="TaskName" textFill="WHITE">
+                  <Label fx:id="taskTaskField" layoutX="368.0" layoutY="23.0" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>

@@ -8,6 +8,9 @@ import java.util.*
  */
 enum class Priority{NONE,LOW,MEDIUM,HIGH}
 enum class Repeat{DAILY,WEEKLY}
+fun getMember(task:Task){
+
+}
 class Task(var task_name:String, var start: Calendar, var end:Calendar, var description:String, var priority: Priority, var list:String, var repeat: Repeat, var location:String,var event:String){
     fun save():Unit{
         val db=DB()
@@ -16,6 +19,7 @@ class Task(var task_name:String, var start: Calendar, var end:Calendar, var desc
         //db.update(query);
 
     }
+
 
 
 }

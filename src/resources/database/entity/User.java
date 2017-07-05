@@ -81,7 +81,9 @@ public class User {
     }
     public ArrayList<Task> getTask(){
         ArrayList<Task> taskArr=new ArrayList<>();
-        for(int i=0;i<20;i++) taskArr.add(new Task("test", Calendar.getInstance(),Calendar.getInstance(),"hello this is test", Priority.LOW,"today", Repeat.DAILY,"hell","1 day to hell"));
+        taskArr.add(new Task("test", Calendar.getInstance(),Calendar.getInstance(),"hello this is test", Priority.LOW,"today", Repeat.DAILY,"hell","1 day to hell"));
+        taskArr.add(new Task("give shit", Calendar.getInstance(),Calendar.getInstance(),"hello this is test", Priority.LOW,"today", Repeat.DAILY,"school","1 day to hell"));
+
         return taskArr;
 
 
