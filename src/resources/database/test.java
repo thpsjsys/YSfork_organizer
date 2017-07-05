@@ -13,5 +13,4 @@ class test{
                 System.out.print(hm.get("id") + " " + hm.get("name") + " " + hm.get("number"));
             }
         }
-    }
 }

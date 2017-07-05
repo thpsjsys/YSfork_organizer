@@ -36,8 +36,18 @@ public class MainSceneController implements Initializable{
     }
 
     @FXML
+    void eventClick(ActionEvent event) {
+        try {content.getChildren().setAll((AnchorPane)FXMLLoader.load(getClass().getResource("../../event/EventList.fxml")));} catch (IOException e) {}
+    }
+
+    @FXML
     void taskClick(ActionEvent event) {
         try {content.getChildren().setAll((AnchorPane)FXMLLoader.load(getClass().getResource("../../task/Task.fxml")));} catch (IOException e) {}
+    }
+
+    @FXML
+    void profileClick() {
+        try {content.getChildren().setAll((AnchorPane)FXMLLoader.load(getClass().getResource("../../profile/Profile.fxml")));} catch (IOException e) {}
     }
 
     @FXML
