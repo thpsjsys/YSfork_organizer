@@ -1,6 +1,8 @@
 package scene.event.entity;
 
+import java.sql.Date;
 import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.GregorianCalendar;
 
 /**
@@ -14,27 +16,27 @@ public class Event {
     private Time startTime;
     private Time endTime;
     private boolean isApproved;
+    private boolean isRegisteredByUser;
 
-    public Event() {
-    }
-
-    public Event(String eventTitle, int eventID, String eventDesc, GregorianCalendar dateOfEvent, Time startTime, Time endTime) {
+    public Event(String eventTitle, int eventID, String eventDesc, Date dateOfEvent, Time startTime, Time endTime) {
         this.eventTitle = eventTitle;
         this.eventID = eventID;
         this.eventDesc = eventDesc;
-        this.dateOfEvent = dateOfEvent;
+        this.dateOfEvent = new GregorianCalendar();
+        this.dateOfEvent.setTime(dateOfEvent);
         this.startTime = startTime;
         this.endTime = endTime;
     }
 
-    public Event(String eventTitle, int eventID, String eventDesc, GregorianCalendar dateOfEvent, Time startTime, Time endTime, boolean isApproved) {
+    public Event(String eventTitle, int eventID, String eventDesc, Date dateOfEvent, Time startTime, Time endTime, boolean isRegisteredByUser) {
         this.eventTitle = eventTitle;
         this.eventID = eventID;
         this.eventDesc = eventDesc;
-        this.dateOfEvent = dateOfEvent;
+        this.dateOfEvent = new GregorianCalendar();
+        this.dateOfEvent.setTime(dateOfEvent);
         this.startTime = startTime;
         this.endTime = endTime;
-        this.isApproved = isApproved;
+        this.isRegisteredByUser = isRegisteredByUser;
     }
 
     public String getEventTitle() {
@@ -91,5 +93,13 @@ public class Event {
 
     public void setApproved(boolean approved) {
         isApproved = approved;
+    }
+
+    public boolean isRegisteredByUser() {
+        return isRegisteredByUser;
+    }
+
+    public void setRegisteredByUser(boolean registeredByUser) {
+        isRegisteredByUser = registeredByUser;
     }
 }

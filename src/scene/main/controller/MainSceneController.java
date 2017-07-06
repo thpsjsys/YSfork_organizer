@@ -32,12 +32,12 @@ public class MainSceneController implements Initializable{
 
     @FXML
     void calendarClick(ActionEvent event) {
-        try {content.getChildren().setAll((AnchorPane)FXMLLoader.load(getClass().getResource("../../calendar/Calendar.fxml")));} catch (IOException e) {}
+        try {content.getChildren().setAll((AnchorPane)FXMLLoader.load(getClass().getResource("../../calendar/UI/CalendarScene.fxml")));} catch (IOException e) {}
     }
 
     @FXML
     void eventClick(ActionEvent event) {
-        try {content.getChildren().setAll((AnchorPane)FXMLLoader.load(getClass().getResource("../../event/EventList.fxml")));} catch (IOException e) {}
+        try {content.getChildren().setAll((AnchorPane)FXMLLoader.load(getClass().getResource("../../event/UI/EventList.fxml")));} catch (IOException e) {System.out.println(e);}
     }
 
     @FXML
@@ -54,7 +54,7 @@ public class MainSceneController implements Initializable{
     void logoutClick(ActionEvent event) {
         Stage stage = (Stage) content.getScene().getWindow();
         stage.setUserData(null);
-        try {stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../../login/Login.fxml"))));} catch (IOException e) {}
+        try {stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../../login/UI/LoginScene.fxml"))));} catch (IOException e) {}
     }
 
     /*private boolean displayStatus = false;
