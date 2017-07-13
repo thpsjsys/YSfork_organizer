@@ -1,7 +1,8 @@
 package resources.database.entity;
 
-import scene.Task.entity.Priority;
-import scene.Task.entity.Repeat;
+
+import scene.Task.Priority;
+import scene.Task.Repeat;
 import scene.Task.entity.Task;
 
 import java.util.ArrayList;
@@ -81,8 +82,7 @@ public class User {
     }
     public ArrayList<Task> getTask(){
         ArrayList<Task> taskArr=new ArrayList<>();
-        taskArr.add(new Task("test", Calendar.getInstance(),Calendar.getInstance(),"hello this is test", Priority.LOW,"today", Repeat.DAILY,"hell","1 day to hell"));
-        taskArr.add(new Task("give shit", Calendar.getInstance(),Calendar.getInstance(),"hello this is test", Priority.LOW,"today", Repeat.DAILY,"school","1 day to hell"));
+
 
         return taskArr;
 

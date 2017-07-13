@@ -1,6 +1,7 @@
 package scene.Task.UI;
 
 import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -31,7 +32,7 @@ public class TaskDetailsController implements Initializable{
     private JFXTextField repeatTextField;
 
     @FXML
-    private JFXTextField listTextField;
+    private JFXTextArea descTextArea;
 
     @FXML
     private JFXTextField locationTextField;
@@ -50,7 +51,7 @@ public class TaskDetailsController implements Initializable{
         endDateTimeTextField.setText("time");
         priorityTextField.setText("low");
         repeatTextField.setText("Daily");
-        listTextField.setText("All");
+        descTextArea.setText(task.getDescription());
         locationTextField.setText(task.getLocation());
 
 

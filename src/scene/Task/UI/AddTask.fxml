@@ -1,30 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scene.Task.AddTask">
+<AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scene.Task.UI.AddTaskController">
    <children>
-      <JFXTextField fx:id="task_name_TextField" layoutX="27.0" layoutY="45.0" prefHeight="24.0" prefWidth="446.0" promptText="Task" />
-      <AnchorPane layoutX="27.0" layoutY="84.0" prefHeight="480.0" prefWidth="446.0">
+      <VBox prefHeight="700.0" prefWidth="450.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <JFXTextField fx:id="start_dateTime_TextField" layoutY="21.0" promptText="Start Date Time" />
-            <JFXTextField fx:id="end_dateTime_TextField" layoutY="80.0" promptText="End Date Time" />
-            <JFXTextField fx:id="priority_TextField" layoutY="144.0" promptText="Priority" />
-            <JFXTextField fx:id="list_TextField" layoutY="267.0" promptText="List" />
-            <JFXTextField fx:id="location_TextField" layoutY="325.0" prefHeight="24.0" prefWidth="209.0" promptText="Location" />
-            <JFXTextField fx:id="repeat_TextField" layoutY="204.0" promptText="Repeat" />
-            <JFXButton layoutX="46.0" layoutY="427.0" onAction="#cancel" style="-fx-background-color: #66bab7;" text="Cancel" />
-            <JFXButton layoutX="336.0" layoutY="427.0" onAction="#add" prefHeight="26.0" prefWidth="63.0" style="-fx-background-color: #66bab7;" text="Add" />
-            <JFXButton fx:id="listButton" accessibleRole="CONTEXT_MENU" layoutX="163.0" layoutY="248.0" prefHeight="37.0" prefWidth="43.0" style="-fx-background-color: #000000;" text="Button" textFill="#ff1616" />
-            <JFXListView layoutX="232.0" prefHeight="399.0" prefWidth="209.0" />
-            <JFXButton fx:id="repeat_button" accessibleRole="CONTEXT_MENU" layoutX="163.0" layoutY="185.0" prefHeight="37.0" prefWidth="43.0" style="-fx-background-color: #000000;" text="Button" textFill="#ff1616" />
-            <JFXButton fx:id="priority_button" accessibleRole="CONTEXT_MENU" layoutX="163.0" layoutY="125.0" prefHeight="37.0" prefWidth="43.0" style="-fx-background-color: #000000;" text="Button" textFill="#ff1616" />
-            <JFXButton fx:id="end_button" accessibleRole="CONTEXT_MENU" layoutX="163.0" layoutY="63.0" prefHeight="37.0" prefWidth="43.0" style="-fx-background-color: #000000;" text="Button" textFill="#ff1616" />
-            <JFXButton fx:id="start_button" accessibleRole="CONTEXT_MENU" layoutX="163.0" layoutY="3.0" prefHeight="37.0" prefWidth="43.0" style="-fx-background-color: #000000;" text="Button" textFill="#ff1616" />
+            <AnchorPane prefHeight="60.0" prefWidth="450.0" style="-fx-background-color: #616161;">
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" height="36.18" radius="12.34" width="15.18" />
+               </effect>
+               <children>
+                  <Label layoutX="129.0" layoutY="13.0" text="Task Details" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas" size="29.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="589.0" prefWidth="450.0" style="-fx-background-color: #EEEEEE;">
+               <children>
+                  <VBox layoutX="79.0" layoutY="30.0" prefHeight="496.0" prefWidth="292.0" spacing="30">
+                     <children>
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="45.0" prefWidth="292.0">
+                           <children>
+                              <AnchorPane prefHeight="45.0" prefWidth="60.0">
+                                 <children>
+                                    <ImageView fitHeight="42.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../resources/images/icon/clipboard.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <JFXTextField fx:id="taskNameTextField" labelFloat="true" prefHeight="39.0" prefWidth="252.0" promptText="Task">
+                                 <font>
+                                    <Font name="Consolas" size="13.0" />
+                                 </font></JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="45.0" prefWidth="292.0">
+                           <children>
+                              <AnchorPane prefHeight="45.0" prefWidth="60.0">
+                                 <children>
+                                    <ImageView fitHeight="42.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../resources/images/icon/TaskCalendar.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <JFXTextField fx:id="startDateTimeTextField" labelFloat="true" prefHeight="39.0" prefWidth="252.0" promptText="start date time">
+                                 <font>
+                                    <Font name="Consolas" size="13.0" />
+                                 </font></JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="45.0" prefWidth="292.0">
+                           <children>
+                              <AnchorPane prefHeight="45.0" prefWidth="60.0">
+                                 <children>
+                                    <ImageView fitHeight="42.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../resources/images/icon/TaskCalendar2.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <JFXTextField fx:id="endDateTimeTextField" labelFloat="true" prefHeight="39.0" prefWidth="252.0" promptText="end date time" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="45.0" prefWidth="292.0">
+                           <children>
+                              <AnchorPane prefHeight="45.0" prefWidth="60.0">
+                                 <children>
+                                    <ImageView fitHeight="42.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../resources/images/icon/priority.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <JFXTextField fx:id="priorityTextField" labelFloat="true" prefHeight="39.0" prefWidth="252.0" promptText="Priority" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="45.0" prefWidth="292.0">
+                           <children>
+                              <AnchorPane prefHeight="45.0" prefWidth="60.0">
+                                 <children>
+                                    <ImageView fitHeight="42.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../resources/images/icon/repeat.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <JFXTextField fx:id="repeatTextField" labelFloat="true" prefHeight="39.0" prefWidth="252.0" promptText="Repeat" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="235.0" prefHeight="45.0" prefWidth="292.0">
+                           <children>
+                              <AnchorPane prefHeight="45.0" prefWidth="60.0">
+                                 <children>
+                                    <ImageView fitHeight="42.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../resources/images/icon/team.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <JFXTextField fx:id="peopleTextField" labelFloat="true" prefHeight="39.0" prefWidth="252.0" promptText="People" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="45.0" prefWidth="292.0">
+                           <children>
+                              <AnchorPane prefHeight="45.0" prefWidth="60.0">
+                                 <children>
+                                    <ImageView fitHeight="42.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../resources/images/icon/location.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <JFXTextField fx:id="locationTextField" labelFloat="true" prefHeight="39.0" prefWidth="252.0" promptText="Location" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="47.0" prefWidth="292.0">
+                           <children>
+                              <AnchorPane prefHeight="45.0" prefWidth="60.0">
+                                 <children>
+                                    <ImageView fitHeight="42.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../resources/images/icon/description.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <JFXTextArea fx:id="descriptionTextArea" labelFloat="true" prefHeight="96.0" prefWidth="252.0" promptText="Description" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+            <AnchorPane prefHeight="52.0" prefWidth="450.0" style="-fx-background-color: #EEEEEE;">
+               <children>
+                  <JFXButton layoutX="261.0" layoutY="9.0" onAction="#save" prefHeight="35.0" prefWidth="109.0" style="-fx-background-color: #212121;" text="Save" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="84.0" layoutY="9.0" onAction="#cancel" prefHeight="35.0" prefWidth="109.0" style="-fx-background-color: #212121;" text="Cancel" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas" size="18.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
          </children>
-      </AnchorPane>
+      </VBox>
    </children>
 </AnchorPane>

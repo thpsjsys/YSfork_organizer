@@ -1,21 +1,32 @@
 package scene.Task.entity
 
 import resources.database.DB
+import scene.Task.Priority
+import scene.Task.Repeat
 import java.util.*
+import scene.Task.convertDateToString;
 
 /**
  * Created by hhf on 6/28/17.
  */
-enum class Priority{NONE,LOW,MEDIUM,HIGH}
-enum class Repeat{DAILY,WEEKLY}
-fun getMember(task:Task){
 
-}
-class Task(var task_name:String, var start: Calendar, var end:Calendar, var description:String, var priority: Priority, var list:String, var repeat: Repeat, var location:String,var event:String){
+class Task(var task_name:String, var start: Calendar, var end:Calendar, var description:String, var priority: Priority, var repeat: Repeat, var location:String, var event:String, var user:String){
     fun save():Unit{
-        val db=DB()
-        val query="INSERT INTO task VALUE(\"$task_name\",\"$start\",\"$end\",\"$description\",\"$priority\",\"$list\",\"$repeat,\"$location\",\"$event\")"
-        println(query);
+        val startDT= convertDateToString(start)
+        val endDT= convertDateToString(end)
+        val rep=repeat.ordinal;
+        val pri=priority.ordinal;
+
+
+        val query="INSERT INTO task(name,start,end,taskDesc,priority,repeatType,location,eventID,userID) VALUES("+
+                                     "'$task_name',$startDT,$endDT,'$description',$pri,$rep,'$location','event','$user')"
+        println(query)
+
+
+
+
+
+
         //db.update(query);
 
     }
