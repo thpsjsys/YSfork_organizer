@@ -1,5 +1,12 @@
 package resources.database.entity;
 
+
+import scene.Task.Priority;
+import scene.Task.Repeat;
+import scene.Task.entity.Task;
+
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
@@ -72,5 +79,13 @@ public class User {
 
     public void setGender(char gender) {
         this.gender = gender;
+    }
+    public ArrayList<Task> getTask(){
+        ArrayList<Task> taskArr=new ArrayList<>();
+
+
+        return taskArr;
+
+
     }
 }

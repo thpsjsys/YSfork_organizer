@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="726.0" prefWidth="877.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scene.Task.UI.TaskDetailsController">
+   <children>
+      <VBox layoutX="104.0" layoutY="111.0" prefHeight="726.0" prefWidth="877.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="100.0" prefWidth="877.0" style="-fx-background-color: #2196F3;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <Label fx:id="taskTaskField" layoutX="368.0" layoutY="23.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <HBox prefHeight="636.0" prefWidth="877.0">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="548.0">
+                     <children>
+                        <AnchorPane layoutX="8.0" layoutY="9.0" prefHeight="519.0" prefWidth="531.0" style="-fx-background-color: #E3F2FD;" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="9.0">
+                           <children>
+                              <VBox layoutX="120.0" layoutY="21.0" prefHeight="496.0" prefWidth="292.0" spacing="30">
+                                 <children>
+                                    <HBox prefHeight="45.0" prefWidth="292.0">
+                                       <children>
+                                          <AnchorPane prefHeight="45.0" prefWidth="60.0">
+                                             <children>
+                                                <ImageView fitHeight="42.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../resources/images/icon/TaskCalendar.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </AnchorPane>
+                                          <JFXTextField fx:id="startDateTimeTextField" labelFloat="true" prefHeight="39.0" prefWidth="252.0" promptText="start date time" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="45.0" prefWidth="292.0">
+                                       <children>
+                                          <AnchorPane prefHeight="45.0" prefWidth="60.0">
+                                             <children>
+                                                <ImageView fitHeight="42.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../resources/images/icon/TaskCalendar2.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </AnchorPane>
+                                          <JFXTextField fx:id="endDateTimeTextField" labelFloat="true" prefHeight="39.0" prefWidth="252.0" promptText="end date time" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="45.0" prefWidth="292.0">
+                                       <children>
+                                          <AnchorPane prefHeight="45.0" prefWidth="60.0">
+                                             <children>
+                                                <ImageView fitHeight="42.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../resources/images/icon/priority.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </AnchorPane>
+                                          <JFXTextField fx:id="priorityTextField" labelFloat="true" prefHeight="39.0" prefWidth="252.0" promptText="Priority" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="45.0" prefWidth="292.0">
+                                       <children>
+                                          <AnchorPane prefHeight="45.0" prefWidth="60.0">
+                                             <children>
+                                                <ImageView fitHeight="42.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../resources/images/icon/repeat.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </AnchorPane>
+                                          <JFXTextField fx:id="repeatTextField" labelFloat="true" prefHeight="39.0" prefWidth="252.0" promptText="Repeat" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="45.0" prefWidth="292.0">
+                                       <children>
+                                          <AnchorPane prefHeight="45.0" prefWidth="60.0">
+                                             <children>
+                                                <ImageView fitHeight="42.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../resources/images/icon/location.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </AnchorPane>
+                                          <JFXTextField fx:id="locationTextField" labelFloat="true" prefHeight="39.0" prefWidth="252.0" promptText="Location" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="47.0" prefWidth="292.0">
+                                       <children>
+                                          <AnchorPane prefHeight="45.0" prefWidth="60.0">
+                                             <children>
+                                                <ImageView fitHeight="42.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../resources/images/icon/description.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </AnchorPane>
+                                          <JFXTextArea fx:id="descTextArea" labelFloat="true" prefHeight="96.0" prefWidth="252.0" promptText="Description" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="5.82" radius="3.1675" width="8.85" />
+                           </effect></AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="658.0" prefWidth="333.0">
+                     <children>
+                        <AnchorPane layoutX="5.0" layoutY="8.0" prefHeight="640.0" prefWidth="319.0">
+                           <effect>
+                              <DropShadow height="8.86" radius="3.9299999999999997" width="8.86" />
+                           </effect>
+                           <children>
+                              <JFXListView fx:id="memberListView" layoutX="14.0" prefHeight="640.0" prefWidth="319.0" style="-fx-background-color: #FCE4EC;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

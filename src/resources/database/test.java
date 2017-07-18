@@ -7,15 +7,6 @@ import java.util.List;
 
 class test{
     public static void main(String[] args) {
-        /*DB db = new DB();
-        List data=db.read("SELECT * FROM test");
-        if(data!=null) {
-            for (Object o : data) {
-                HashMap hm = (HashMap) o;
-                System.out.print(hm.get("id") + " " + hm.get("name") + " " + hm.get("number"));
-            }
-        }*/
-
         DB db = new DB();
         CachedRowSet cachedRowSet = db.read("SELECT * FROM User WHERE userID = '123456A' ");
         try {
