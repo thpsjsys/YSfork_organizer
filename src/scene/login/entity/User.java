@@ -13,7 +13,6 @@ public class User {
     private int hpNumber;
     private char gender;
 
-    // For debugging
     public User() {
 
     }
@@ -21,7 +20,8 @@ public class User {
     public User(String userID, String name, Date birthDate, String email, int hpNumber, char gender) {
         this.userID = userID;
         this.name = name;
-        //this.birthDate.setTimeInMillis(birthDate.getTime());
+        this.birthDate = new GregorianCalendar();
+        this.birthDate.setTime(birthDate);
         this.email = email;
         this.hpNumber = hpNumber;
         this.gender = gender;

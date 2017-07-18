@@ -13,10 +13,10 @@ public class UserAccess {
     }
 
     public UserAccess(User user) {
-        this.user = user;
-    }
+    this.user = user;
+}
 
-    public User getUser() {
+    public static User getUser() {
         return user;
     }
 

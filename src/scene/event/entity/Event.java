@@ -2,7 +2,6 @@ package scene.event.entity;
 
 import java.sql.Date;
 import java.sql.Time;
-import java.sql.Timestamp;
 import java.util.GregorianCalendar;
 
 /**
@@ -15,7 +14,10 @@ public class Event {
     private GregorianCalendar dateOfEvent;
     private Time startTime;
     private Time endTime;
+
+    // For CCA organizers
     private boolean isApproved;
+    // For students
     private boolean isRegisteredByUser;
 
     public Event(String eventTitle, int eventID, String eventDesc, Date dateOfEvent, Time startTime, Time endTime) {
@@ -26,6 +28,16 @@ public class Event {
         this.dateOfEvent.setTime(dateOfEvent);
         this.startTime = startTime;
         this.endTime = endTime;
+    }
+
+    public Event(String eventTitle, int eventID, String eventDesc, GregorianCalendar dateOfEvent, Time startTime, Time endTime, boolean isApproved) {
+        this.eventTitle = eventTitle;
+        this.eventID = eventID;
+        this.eventDesc = eventDesc;
+        this.dateOfEvent = dateOfEvent;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.isApproved = isApproved;
     }
 
     public Event(String eventTitle, int eventID, String eventDesc, Date dateOfEvent, Time startTime, Time endTime, boolean isRegisteredByUser) {

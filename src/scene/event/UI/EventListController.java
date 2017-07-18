@@ -4,9 +4,10 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import resources.database.DB;
+import javafx.stage.Stage;
 import scene.event.EventController;
 import scene.event.entity.Event;
 
@@ -14,16 +15,15 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Date;
+import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by Liu Woon Kit on 29/6/2017.
  */
 public class EventListController implements Initializable {
-    private EventController eventController = new EventController();
-    private EventListController eventListController = this;
-    private DB db = new DB();
-
     @FXML
     Label clockDisplay;
 
@@ -35,15 +35,16 @@ public class EventListController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        EventController.setEventListController(this);
+        displayEvents();
         startClock();
-        addEventsToDisplay();
     }
 
-    public void addEventsToDisplay() {
-        clearDisplays();
-        for(Event event : eventController.getEvents()) {
+    public void displayEvents() {
+        clearDisplay();
+        for(Event event : EventController.getEvents()) {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EventObject.fxml"));
-            fxmlLoader.setController(new EventObjectController(eventListController, event));
+            fxmlLoader.setController(new EventObjectController(event));
             try {
                 if(event.isRegisteredByUser()) {
                     eventListBox.getChildren().add(fxmlLoader.load());
@@ -57,7 +58,7 @@ public class EventListController implements Initializable {
         }
     }
 
-    public void clearDisplays() {
+    public void clearDisplay() {
         newEventListBox.getChildren().clear();
         eventListBox.getChildren().clear();
     }
@@ -76,5 +77,13 @@ public class EventListController implements Initializable {
         },0, 1000);
     }
 
-
+    @FXML
+    public void manageEvents() {
+        Stage stage = new Stage();
+        try {
+            stage.setScene(new Scene(new FXMLLoader(getClass().getResource("EventAdd.fxml")).load()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

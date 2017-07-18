@@ -13,8 +13,6 @@ import java.sql.SQLException;
 public class LoginController {
     private DB db;
     public boolean verify(String userID, String password) {
-        User user = null;
-
         CachedRowSet rs = db.read("SELECT userID, name, birthDate, email, hpNumber, gender FROM User WHERE userID='" + userID + "' && password='" + password + "'");
 
         if(rs.size() == 0)
@@ -22,13 +20,10 @@ public class LoginController {
 
         try {
             if(rs.next()) {
-                user = new User(rs.getString("userID"), rs.getString("name"), rs.getDate("birthDate"), rs.getString("email"), rs.getInt("hpNumber"), (rs.getString("gender")).charAt(0));
+                new UserAccess(new User(rs.getString("userID"), rs.getString("name"), rs.getDate("birthDate"), rs.getString("email"), rs.getInt("hpNumber"), (rs.getString("gender")).charAt(0)));
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        } catch (SQLException e) {e.printStackTrace();}
 
-        new UserAccess(user);
         return true;
     }
 }

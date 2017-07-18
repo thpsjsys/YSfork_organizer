@@ -20,7 +20,6 @@ import static javafx.stage.Modality.APPLICATION_MODAL;
  * Created by Liu Woon Kit on 29/6/2017.
  */
 public class EventObjectController implements Initializable {
-    private EventListController eventListController;
     private Event event;
     private final String DAY_OF_WEEK[] = {"SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"};
     private final String MONTH[] = new String[]{"JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "November", "December"};
@@ -52,17 +51,17 @@ public class EventObjectController implements Initializable {
 
         // Event Title
         eventTitleLbl.setText(event.getEventTitle());
-        eventDescLbl.setText(event.getEventDesc());
+        //eventDescLbl.setText(event.getEventDesc().substring(0, 20) + "...");
 
         // On click event
-        paneClick.setOnMouseClicked(event -> {
+        paneClick.setOnMouseClicked(e -> {
             Stage stage = new Stage();
             stage.initModality(APPLICATION_MODAL);
 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../UI/EventView.fxml"));
-            fxmlLoader.setController(new EventViewController(this.eventListController, this.event));
-            try {stage.setScene(new Scene(fxmlLoader.load()));} catch (IOException e) {
-                e.printStackTrace();
+            fxmlLoader.setController(new EventViewController(event));
+            try {stage.setScene(new Scene(fxmlLoader.load()));} catch (IOException e1) {
+                e1.printStackTrace();
             }
 
             // Work around for setResizable bug
@@ -73,8 +72,7 @@ public class EventObjectController implements Initializable {
         });
     }
 
-    public EventObjectController(EventListController eventListController, Event event) {
-        this.eventListController = eventListController;
+    public EventObjectController(Event event) {
         this.event = event;
     }
 }
