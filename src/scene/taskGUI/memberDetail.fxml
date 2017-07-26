@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scene.taskGUI.MemberDetailController">
+   <children>
+      <AnchorPane prefHeight="110.0" prefWidth="800.0" style="-fx-background-color: grey;">
+         <children>
+            <Label layoutX="268.0" layoutY="29.0" text="Member Detail" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="139.0" layoutY="144.0" text="Name:" />
+      <Label fx:id="memberName" layoutX="180.0" layoutY="144.0" />
+      <Label layoutX="139.0" layoutY="189.0" text="School:" />
+      <Label fx:id="memberSchool" layoutX="180.0" layoutY="189.0" />
+      <Label layoutX="139.0" layoutY="245.0" text="Contact nuumber:" />
+      <Label fx:id="memberContactNo" layoutX="180.0" layoutY="245.0" AnchorPane.leftAnchor="369.0">
+         <padding>
+            <Insets left="-100.0" />
+         </padding>
+      </Label>
+      <Label layoutX="139.0" layoutY="293.0" text="Task:" />
+      <Label fx:id="memberTask" layoutX="170.0" layoutY="292.0" />
+   </children>
+</AnchorPane>

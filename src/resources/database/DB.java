@@ -13,14 +13,13 @@ import java.util.Map;
 /**
  * Created by hhf on 6/28/17.
  */
-public class DB {
+public class  DB {
     private final String DRIVER = "com.mysql.jdbc.Driver";
     //private final String DATABASE_URL="jdbc:mysql://localhost:3306/organizer?useSSL=false";
-    private static final String DATABASE_URL = "jdbc:mysql://172.27.190.104:3306/organizer?useSSL=false";
+    private final static String DATABASE_URL="jdbc:mysql://localhost:3306/organizer?useSSL=false";
 
-    private static String userName = "user";
-    private static String password = "Password&&123H";
-
+    private static String userName="root";
+    private static String password="yungsoon";
 
     public DB() {
         /*try{
@@ -65,6 +64,7 @@ public class DB {
     }
 
     public static CachedRowSet read(String query) {
+        System.out.println(query);
         Connection connection = openConnection();
         Statement statement = null;
         ResultSet rs = null;
