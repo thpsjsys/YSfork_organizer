@@ -26,12 +26,8 @@
       <Label layoutX="139.0" layoutY="189.0" text="School:" />
       <Label fx:id="memberSchool" layoutX="180.0" layoutY="189.0" />
       <Label layoutX="139.0" layoutY="245.0" text="Contact nuumber:" />
-      <Label fx:id="memberContactNo" layoutX="180.0" layoutY="245.0" AnchorPane.leftAnchor="369.0">
-         <padding>
-            <Insets left="-100.0" />
-         </padding>
-      </Label>
+      <Label fx:id="memberContactNo" layoutX="240.0" layoutY="245.0" />
       <Label layoutX="139.0" layoutY="293.0" text="Task:" />
-      <Label fx:id="memberTask" layoutX="170.0" layoutY="292.0" />
+      <Label fx:id="memberTask" layoutX="170.0" layoutY="293.0" />
    </children>
 </AnchorPane>

@@ -44,7 +44,7 @@ public class MemberDetailController implements Initializable{
       }
 
     public void setUser(User user) {
-        User fullUser=User.getUserInformation(user.getUserID());
+        User fullUser=EventController.getUserInformation(user.getUserID());
 
         memberName.setText(fullUser.getName());
         memberSchool.setText(fullUser.getSchool());

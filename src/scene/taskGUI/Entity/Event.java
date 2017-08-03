@@ -105,20 +105,5 @@ public class Event {
         isApproved = approved;
     }
 
-    public static ArrayList<Event> getEventTitle(Event event){
-        ArrayList<Event> arr=new ArrayList<>();
-        DB db=new DB();
-        CachedRowSet rs=db.read("SELECT * FROM event;");
-        try {
-            while(rs.next()) {
-                event = new Event(rs.getString("eventTitle"));
-                event.setEventID(rs.getInt("eventID"));
-                arr.add(event);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        //load data base on event info
-        return arr;
-    }
+
 }
