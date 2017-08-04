@@ -3,10 +3,6 @@ package scene.note.entity;
 import resources.database.DB;
 import resources.database.UserAccess;
 
-import javax.sql.rowset.CachedRowSet;
-import java.sql.SQLException;
-
-
 public class Note {
     private String adminNo = UserAccess.getUser().getUserID();
 
@@ -14,12 +10,13 @@ public class Note {
     private String title;
     private String content;
     private boolean isPined;
-
+    private int noteID;
     public Note(String group, String title, String content, boolean isPined) {
         this.group = group;
         this.title = title;
         this.content = content;
         this.isPined=isPined;
+
     }
 
     public boolean isPined() {
@@ -52,11 +49,10 @@ public class Note {
         this.content = content;
     }
 
-
     public void storeData() {
         int val=0;
         if(isPined)
             val=1;
-        DB.update(String.format("insert into note value(\"%s\",\"%s\",\"%s\",%d,\"%s\")",group,title,content,val, adminNo));
+        DB.update(String.format("insert into note value(%d,\"%s\",\"%s\",\"%s\",%d,\"%s\")",noteID,group,title,content,val, adminNo));
     }
 }

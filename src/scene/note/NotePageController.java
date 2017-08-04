@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
 
 
 public class NotePageController implements Initializable{
-    private String adminNo = UserAccess.getUser().getUserID();
+    private String userID = UserAccess.getUser().getUserID();
     private ArrayList<Note> noteArr = new ArrayList<Note>();
 
     @FXML
@@ -46,6 +46,10 @@ public class NotePageController implements Initializable{
     @FXML
     private TextArea noteContent;
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        isPined = false;
+    }
     @FXML
     void backAndSave(ActionEvent event) throws IOException {
         String control = null;
@@ -67,30 +71,15 @@ public class NotePageController implements Initializable{
             closeStage(backAndSaveButt);
 
         }else if(control.equals("save")){
-
-
-            //SqlUpdateData update = new SqlUpdateData();
-
             note.setPined(isPined);
-            String sqlQuery = "UPDATE note SET content= '"+noteContent.getText()+"' WHERE title='"+noteTitle.getText()+"' AND adminNo='"+adminNo+"' ";
+            String sqlQuery = "UPDATE note SET content= '"+noteContent.getText()+"' WHERE title='"+noteTitle.getText()+"' AND userID='"+userID+"' ";
 
             DB.update(sqlQuery);
             int i=0;
             if(isPined) i=1;
-            //util.Util.prln("UPDATE note SET isPined="+i+" WHERE title='"+noteTitle.getText()+"'");
-            DB.update("UPDATE note SET isPined="+i+" WHERE title='"+noteTitle.getText()+"' AND adminNo='"+adminNo+"' ");
-            //update.changeCellData(" note","content","'"+noteContent.getText()+"'");
+            DB.update("UPDATE note SET isPined="+i+" WHERE title='"+noteTitle.getText()+"' AND userID='"+userID+"' ");
             closeStage(backAndSaveButt);
-
         }
-
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        isPined = false;
-        pinnedImage=new Image(getClass().getResourceAsStream("../../image/pinned.png"));
-        unpinnedImage=new Image(getClass().getResourceAsStream("../../image/pin.png"));
     }
 
     public Note getNote() {

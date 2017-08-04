@@ -34,15 +34,9 @@ public class NewGroupController implements Initializable {
 
     @FXML
     void confirm(ActionEvent event) {
-
-
-        //System.out.println(String.format("insert into group values(\"%s\")",enteredGroupName.getText()));
         System.out.println(String.format("INSERT INTO groupFolder(groupName) VALUES(\"%s\",\"%s\")",enteredGroupName.getText(), adminNo));
 
         DB.update(String.format("INSERT INTO groupFolder VALUES(\"%s\",\"%s\")",enteredGroupName.getText(), adminNo));
-
-
-
 
         Stage currentWindow = (Stage) cancel.getScene().getWindow();
         currentWindow.close();

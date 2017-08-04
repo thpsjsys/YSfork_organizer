@@ -34,7 +34,7 @@ public class noteController implements Initializable {
     private String userID = UserAccess.getUser().getUserID();
 
     private ObservableList<Note> othersArr = FXCollections.observableArrayList();
-    //private ArrayList<String> groupArr = new ArrayList<String>();
+
     private ObservableList<String> groupArr= FXCollections.observableArrayList();
 
     private String currentGroup;
@@ -65,10 +65,7 @@ public class noteController implements Initializable {
             currentGroup = groupArr.get(0);
         }
         retrieveNote(currentGroup);
-
     }
-
-
 
     @FXML
     void addNewNote(ActionEvent event) throws IOException {
@@ -98,17 +95,9 @@ public class noteController implements Initializable {
 
         stage.showAndWait();
         retrieveGroupFolder();
-
-
-
     }
 
     protected void retrieveGroupFolder(){
-        //SqlRetrieveData r = new SqlRetrieveData();
-       // r.openConnection();
-
-        //ResultSet rs = r.retriveData("SELECT * FROM groupFolder WHERE adminNo ='"+adminNo+"'  ");
-
         DB db=new DB();
         CachedRowSet rs=db.read("SELECT * FROM groupFolder WHERE userID ='"+userID+"'  ");
 
@@ -144,10 +133,6 @@ public class noteController implements Initializable {
         othersArr.clear();
         pinnedArr.clear();
 
-        //SqlRetrieveData retrieve = new SqlRetrieveData();
-      //  retrieve.openConnection();
-
-        //ResultSet rs = retrieve.retriveData("SELECT * FROM note WHERE groupName=\""+groupName+"\"");
         DB db=new DB();
         CachedRowSet rs=db.read("SELECT * FROM note WHERE groupName='"+groupName+"'");
         try {
@@ -164,8 +149,6 @@ public class noteController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        //retrieve.closeConnection();
-
         displayNote();
 
     }
@@ -200,10 +183,7 @@ public class noteController implements Initializable {
 
                     }else if(event.getButton().equals(MouseButton.SECONDARY)) {
                         showContextMenu(button);
-
                     }
-
-
                 }
             });
 
@@ -215,7 +195,6 @@ public class noteController implements Initializable {
             }
 
             others.getChildren().add(button);
-
         }
         row = 0;
         column = 0;
@@ -239,20 +218,15 @@ public class noteController implements Initializable {
 
                     }else if(event.getButton().equals(MouseButton.SECONDARY)) {
                         showContextMenu(button);
-
                     }
-
                 }
             });
-
-            //System.out.println(String.format("posX %s posY %s",row*width,column*height));
             button.relocate(row*width,column*height);
             row++;
             if(row>=maxPerRow){
                 row=0;
                 column++;
             }
-
             pinned.getChildren().add(button);
 
         }
@@ -271,7 +245,6 @@ public class noteController implements Initializable {
 
         stage.showAndWait();
         retrieveNote(currentGroup);
-
     }
 
     private void showContextMenu(Button btn){
@@ -282,7 +255,6 @@ public class noteController implements Initializable {
             public void handle(ActionEvent event) {
                 DB.update("DELETE FROM note WHERE title='"+btn.getText()+"' AND userID='"+userID+"' ");
                 retrieveNote(currentGroup);
-
             }
         });
         contextMenu.getItems().addAll(delete);

@@ -43,12 +43,10 @@ public class NewNoteController implements Initializable{
         isPined = false;
         pinnedImage=new Image(getClass().getResourceAsStream("../../resources/images/pinned.png"));
         unpinnedImage=new Image(getClass().getResourceAsStream("../../resources/images/pin.png"));
-
     }
 
     @FXML
     void save(ActionEvent event) {
-
         Note n = new Note(currentGroup, title.getText(), content.getText(),isPined);
         n.storeData();
         Stage currentWindow = (Stage) saveButton.getScene().getWindow();

@@ -32,7 +32,6 @@ public class ConfirmSaveController extends NotePageController implements Initial
 
     @FXML
     void doNotSave(ActionEvent event) throws IOException {
-
         control = "no save";
         closeStage(doNotSaveButt);
     }
@@ -41,7 +40,6 @@ public class ConfirmSaveController extends NotePageController implements Initial
     void save(ActionEvent event) throws IOException {
         control = "save";
         closeStage(saveButt);
-
     }
 
     @FXML
