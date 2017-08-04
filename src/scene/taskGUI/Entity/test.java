@@ -17,7 +17,9 @@ public class test extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        System.out.println("csdc");
         Parent root = FXMLLoader.load(getClass().getResource("../viewEventTeam.fxml"));
+        System.out.println("csdc2");
         primaryStage.setTitle("Personal Manager");
         primaryStage.setScene(new Scene(root));
         //primaryStage.getIcons().add(new Image(DEFAULT_ICON));

@@ -7,11 +7,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.scene.NotePageController">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scene.note.NotePageController">
    <children>
-      <AnchorPane prefHeight="96.0" prefWidth="1024.0" style="-fx-background-color: #E91E63;">
+      <AnchorPane prefHeight="96.0" prefWidth="1024.0" style="-fx-background-color: grey;">
          <children>
-            <Label fx:id="noteTitle" alignment="CENTER" layoutX="22.0" prefHeight="96.0" prefWidth="414.0" style="-fx-font-size: 24;" stylesheets="@../../fonts/AMDRTG.css" text="Note 1" textFill="WHITE">
+            <Label fx:id="noteTitle" alignment="CENTER" layoutX="22.0" prefHeight="96.0" prefWidth="414.0" style="-fx-font-size: 24;" text="Note 1" textFill="WHITE">
                <font>
                   <Font name="Arial Bold Italic" size="36.0" />
                </font>
@@ -20,7 +21,7 @@
                <graphic>
                   <ImageView fx:id="pinImage" fitHeight="43.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../image/pin.png" />
+                        <Image url="@../../resources/images/pin.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -29,7 +30,7 @@
                <graphic>
                   <ImageView fitHeight="48.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../image/arrow_back.png" />
+                        <Image url="@../../resources/images/arrow_back.png" />
                      </image>
                   </ImageView>
                </graphic>

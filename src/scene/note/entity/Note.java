@@ -3,6 +3,9 @@ package scene.note.entity;
 import resources.database.DB;
 import resources.database.UserAccess;
 
+import javax.sql.rowset.CachedRowSet;
+import java.sql.SQLException;
+
 
 public class Note {
     private String adminNo = UserAccess.getUser().getUserID();
@@ -51,6 +54,9 @@ public class Note {
 
 
     public void storeData() {
-        DB.read(String.format("insert into note value(\"%s\",\"%s\",\"%s\",\"%s\")",group,title,content, adminNo));
+        int val=0;
+        if(isPined)
+            val=1;
+        DB.update(String.format("insert into note value(\"%s\",\"%s\",\"%s\",%d,\"%s\")",group,title,content,val, adminNo));
     }
 }

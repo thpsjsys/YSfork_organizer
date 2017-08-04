@@ -27,7 +27,7 @@ public class MainSceneController implements Initializable{
 
     @FXML
     void homeClick() {
-        try {content.getChildren().setAll((AnchorPane)FXMLLoader.load(getClass().getResource("../../home/Home.fxml")));} catch (IOException e) {}
+        try {content.getChildren().setAll((AnchorPane)FXMLLoader.load(getClass().getResource("../../note/note.fxml")));} catch (IOException e) {}
     }
 
     @FXML

@@ -57,7 +57,6 @@ public class ConfirmSaveController extends NotePageController implements Initial
     private void closeStage(Button btn){
         Stage currentWindow = (Stage)btn.getScene().getWindow();
         currentWindow.close();
-
     }
 
     public String getControl() {

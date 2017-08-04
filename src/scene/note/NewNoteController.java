@@ -14,9 +14,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Created by 2e3cr on 20/1/2017.
- */
+
 public class NewNoteController implements Initializable{
 
     @FXML
@@ -43,8 +41,8 @@ public class NewNoteController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         isPined = false;
-        pinnedImage=new Image(getClass().getResourceAsStream("../../image/pinned.png"));
-        unpinnedImage=new Image(getClass().getResourceAsStream("../../image/pin.png"));
+        pinnedImage=new Image(getClass().getResourceAsStream("../../resources/images/pinned.png"));
+        unpinnedImage=new Image(getClass().getResourceAsStream("../../resources/images/pin.png"));
 
     }
 
@@ -74,6 +72,5 @@ public class NewNoteController implements Initializable{
         }else{
             pinImage.setImage(unpinnedImage);
         }
-
     }
 }

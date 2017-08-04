@@ -10,9 +10,9 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scene.note.noteController">
    <children>
-      <AnchorPane layoutX="2.0" prefHeight="99.0" prefWidth="919.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="652.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="2.0" prefHeight="99.0" prefWidth="919.0" style="-fx-background-color: grey" AnchorPane.bottomAnchor="652.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label alignment="CENTER" layoutX="226.0" layoutY="40.0" prefHeight="43.0" prefWidth="414.0" style="-fx-font-size: 24;" stylesheets="@../../../../../Desktop/manager-master/src/fonts/AMDRTG.css" text="Notes" textFill="WHITE">
+            <Label alignment="CENTER" layoutX="226.0" layoutY="40.0" prefHeight="43.0" prefWidth="414.0" style="-fx-font-size: 24;" text="Notes" textFill="WHITE">
                <font>
                   <Font name="Arial Black" size="96.0" />
                </font>
@@ -30,7 +30,7 @@
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../Desktop/manager-master/src/image/plus.png" />
+                        <Image url="@../../resources/images/plus.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -64,7 +64,7 @@
                <graphic>
                   <ImageView fitHeight="46.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../Desktop/manager-master/src/image/pin.png" />
+                        <Image url="@../../resources/images/pin.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -78,7 +78,7 @@
                <graphic>
                   <ImageView fitHeight="61.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../Desktop/manager-master/src/image/add_note.png" />
+                        <Image url="@../../resources/images/add_note.png" />
                      </image>
                   </ImageView>
                </graphic>

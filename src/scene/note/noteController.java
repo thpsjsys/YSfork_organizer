@@ -31,7 +31,7 @@ import java.util.ResourceBundle;
 
 public class noteController implements Initializable {
 
-    private String adminNo = UserAccess.getUser().getUserID();
+    private String userID = UserAccess.getUser().getUserID();
 
     private ObservableList<Note> othersArr = FXCollections.observableArrayList();
     //private ArrayList<String> groupArr = new ArrayList<String>();
@@ -58,7 +58,8 @@ public class noteController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //retrieveGroupFolder();
+        retrieveGroupFolder();
+
         if(groupArr.size()!=0) {
             //util.Util.prln(groupArr.size() + "");
             currentGroup = groupArr.get(0);
@@ -109,7 +110,7 @@ public class noteController implements Initializable {
         //ResultSet rs = r.retriveData("SELECT * FROM groupFolder WHERE adminNo ='"+adminNo+"'  ");
 
         DB db=new DB();
-        CachedRowSet rs=db.read("SELECT * FROM groupFolder WHERE adminNo ='"+adminNo+"'  ");
+        CachedRowSet rs=db.read("SELECT * FROM groupFolder WHERE userID ='"+userID+"'  ");
 
         groupArr.clear();
         try {
@@ -122,10 +123,6 @@ public class noteController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
-
-
     }
     protected void displayGroup(){
         groupList.getChildren().clear();
@@ -152,7 +149,7 @@ public class noteController implements Initializable {
 
         //ResultSet rs = retrieve.retriveData("SELECT * FROM note WHERE groupName=\""+groupName+"\"");
         DB db=new DB();
-        CachedRowSet rs=db.read("SELECT * FROM note WHERE groupName=\""+groupName+"\"");
+        CachedRowSet rs=db.read("SELECT * FROM note WHERE groupName='"+groupName+"'");
         try {
             while(rs.next()){
                 if(rs.getInt("isPined")>0){
@@ -283,15 +280,12 @@ public class noteController implements Initializable {
         delete.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DB.update("DELETE FROM note WHERE title='"+btn.getText()+"' AND adminNo='"+adminNo+"' ");
+                DB.update("DELETE FROM note WHERE title='"+btn.getText()+"' AND userID='"+userID+"' ");
                 retrieveNote(currentGroup);
 
             }
         });
         contextMenu.getItems().addAll(delete);
         btn.setContextMenu(contextMenu);
-
-
     }
-
 }
