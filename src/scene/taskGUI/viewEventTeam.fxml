@@ -9,12 +9,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../../resources/fonts/viewEventTeam.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scene.taskGUI.ViewEventTeamController">
+<AnchorPane prefHeight="763.0" prefWidth="1275.0" stylesheets="@../../resources/fonts/viewEventTeam.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scene.taskGUI.ViewEventTeamController">
    <children>
-      <JFXListView fx:id="viewEventListView" layoutY="111.0" prefHeight="489.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="111.0" />
-      <AnchorPane prefHeight="110.0" prefWidth="800.0" style="-fx-background-color: grey;">
+      <JFXListView fx:id="viewEventListView" layoutY="110.0" prefHeight="489.0" prefWidth="800.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="110.0" />
+      <AnchorPane prefHeight="110.0" prefWidth="1275.0" style="-fx-background-color: grey;">
          <children>
-            <Label layoutX="285.0" layoutY="29.0" text="Events' Name" textFill="WHITE">
+            <Label layoutX="530.0" layoutY="29.0" text="Events' Name" textFill="WHITE">
                <font>
                   <Font size="36.0" />
                </font>
