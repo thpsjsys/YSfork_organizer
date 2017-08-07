@@ -31,7 +31,7 @@ public class TaskBarController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-    public Task getTask(){
+   /* public Task getTask(){
         return task;
     }
     public void setTaskInfo(Task task){
@@ -66,5 +66,5 @@ public class TaskBarController implements Initializable{
         taskInfoVbox.getChildren().add(label);
 
 
-    }
+    }*/
 }

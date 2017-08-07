@@ -9,7 +9,7 @@ public class UserAccess {
     // This class stores user object
     private static User user;
 
-    public UserAccess() {
+    public UserAccess(resources.database.entity.User user) {
     }
 
     public UserAccess(User user) {

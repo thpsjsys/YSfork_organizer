@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * Created by Liu Woon Kit on 5/7/2017.
  */
 public class EventController {
-    private static String userID = (new UserAccess()).getUser().getUserID();
+    private static final String userID = UserAccess.getUser().getUserID();
     private static EventListController eventListController = null;
 
     public static ArrayList<Event> getEvents() {

@@ -19,9 +19,6 @@ import java.util.ResourceBundle;
  */
 public class MemberDetailController implements Initializable{
 
-
-   // @FXML
-    //private ListView<String> memberListListView;
     @FXML
     private Label memberName;
     @FXML
@@ -31,16 +28,8 @@ public class MemberDetailController implements Initializable{
     @FXML
     private Label memberTask;
 
-
-
-
-
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-
       }
 
     public void setUser(User user) {
@@ -50,10 +39,6 @@ public class MemberDetailController implements Initializable{
         memberSchool.setText(fullUser.getSchool());
         memberContactNo.setText(String.valueOf(fullUser.getHpNumber()));
         memberTask.setText(fullUser.getTask());
-        // memberListListView.setItems(memberName);
-        //memberListListView.setItems(memberSchool);
-        //memberListListView.setItems(memberContact);
-        //memberListListView.setItems(memberTask);
 
     }
 }

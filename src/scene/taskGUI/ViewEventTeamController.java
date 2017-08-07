@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
 public class ViewEventTeamController implements Initializable{
     private ObservableList<String> eventNameList= FXCollections.observableArrayList();
     private ArrayList<Event> eventArr;
-    //private Event event;
+
     @FXML
     private ListView<String> viewEventListView;
     @Override
@@ -50,7 +50,7 @@ public class ViewEventTeamController implements Initializable{
 
             ctr.setEvent(eventArr.get(index));
             Scene scene=new Scene(root);
-            //scene.getStylesheets().add(getClass().getResource("viewEventTeam.css").toExternalForm());
+
             Stage stage=new Stage();
             stage.setScene(scene);
 

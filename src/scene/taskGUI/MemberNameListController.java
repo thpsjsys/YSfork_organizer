@@ -33,9 +33,7 @@ public class MemberNameListController implements Initializable{
     }
 
     private void  retrieveEventMember(){
-
         arr=EventController.getMemberName(event);
-        // eventNameList.add(event.getEventTitle(Event));
 
         for(User userName:arr){
             eventMemberNameList.add(userName.getName());

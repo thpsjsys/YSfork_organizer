@@ -13,17 +13,11 @@ import java.util.ArrayList;
  */
 public class EventController{
 
-
-
-    /*public static ArrayList<User> getMember(Event event){
-        return User.getMemberDetail(event);
-
-    }*/
     public static ArrayList<User> getMemberDetail(Event event){
         ArrayList<User> arr=new ArrayList<>();
         DB db=new DB();
 
-        CachedRowSet rs=db.read("SELECT u.name,school,hpNumber, t.taskDesc from organizer.user u INNER JOIN organizer.task t on u.name=t.name where eventID='"+event+"'");
+        CachedRowSet rs=db.read("SELECT u.name,school,hpNumber, t.taskDesc from organizer.user u INNER JOIN organizer.eventtask t on u.name=t.name where eventID='"+event+"'");
         if(rs!=null) {
             try {
                 while (rs.next()) {
@@ -43,10 +37,10 @@ public class EventController{
     }
     public static User getUserInformation(String id){
 
-        String query="SELECT u.name,school,hpNumber, t.taskDesc from organizer.user u inner join organizer.userevent ue on u.userID=ue.userID INNER JOIN organizer.task t on u.name=t.name where u.userID='"+id+"'";
+        String query="SELECT u.name,school,hpNumber, t.taskDesc from organizer.user u inner join organizer.userevent ue on u.userID=ue.userID INNER JOIN organizer.eventtask t on u.name=t.name where u.userID='"+id+"'";
         DB db=new DB();
         User user=new User();
-        CachedRowSet rs=db.read(query);
+          CachedRowSet rs=db.read(query);
         if(rs!=null){
             try {
                 while (rs.  next()) {

@@ -48,8 +48,8 @@ public class TaskMainController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        user=new User();
-        taskArr=TaskControllerKt.getTaskByUser(user);
+        //user=new User();
+        //taskArr=TaskControllerKt.getTaskByUser(user);
         updateTaskListContontainer(taskArr);
 
         //add add icon
@@ -88,7 +88,7 @@ public class TaskMainController implements Initializable {
             try {
                 Parent node=loader.load();
                 TaskBarController tc=loader.getController();
-                tc.setTaskInfo(t);
+                /*tc.setTaskInfo(t);*/
                 node.setOnMouseClicked(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
@@ -96,7 +96,7 @@ public class TaskMainController implements Initializable {
                         try{
                             AnchorPane ap=taskDetailSceneLoader.load();
                             TaskDetailsController tdc=taskDetailSceneLoader.getController();
-                            tdc.setTask(tc.getTask());
+                            /*tdc.setTask(tc.getTask());*/
                             taskDetailsContainer.getChildren().setAll(ap);
 
                         }catch (IOException e){ e.printStackTrace();}

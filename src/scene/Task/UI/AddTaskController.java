@@ -62,7 +62,7 @@ public class AddTaskController implements Initializable{
         String location=locationTextField.getText();
         String description=descriptionTextArea.getText();
 
-        TaskControllerKt.addTask(task,start,end,description,priority,repeat,location,"help hello","123456A");
+        //TaskControllerKt.addTask(task,start,end,description,priority,repeat,location,"help hello","123456A");
 
 
 

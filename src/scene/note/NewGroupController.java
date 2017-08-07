@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import resources.database.DB;
 import resources.database.UserAccess;
+import scene.note.entity.Note;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -31,13 +32,13 @@ public class NewGroupController implements Initializable {
 
     @FXML
     private TextField enteredGroupName;
-
+    //Note note = new Note();
     @FXML
     void confirm(ActionEvent event) {
-        System.out.println(String.format("INSERT INTO groupFolder(groupName) VALUES(\"%s\",\"%s\")",enteredGroupName.getText(), adminNo));
+        //System.out.println(String.format("INSERT INTO groupFolder(groupName) VALUES(\"%s\",\"%s\")",enteredGroupName.getText(), adminNo));
 
         DB.update(String.format("INSERT INTO groupFolder VALUES(\"%s\",\"%s\")",enteredGroupName.getText(), adminNo));
-
+        //note.confirm();
         Stage currentWindow = (Stage) cancel.getScene().getWindow();
         currentWindow.close();
     }

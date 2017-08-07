@@ -44,7 +44,7 @@ public class NotePageController implements Initializable{
     private Image pinnedImage;
 
     @FXML
-    private TextArea noteContent;
+    public TextArea noteContent;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -57,7 +57,7 @@ public class NotePageController implements Initializable{
         loader = new FXMLLoader(getClass().getResource("ConfirmSave.fxml"));
         Parent root=loader.load();
         ConfirmSaveController controller = loader.getController();
-        //controller.setControl(control);
+
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -66,18 +66,19 @@ public class NotePageController implements Initializable{
         if(control == null){
 
 
-        }else if(control.equals("no save")){
+            }else if(control.equals("no save")){
 
             closeStage(backAndSaveButt);
 
         }else if(control.equals("save")){
+
             note.setPined(isPined);
-            String sqlQuery = "UPDATE note SET content= '"+noteContent.getText()+"' WHERE title='"+noteTitle.getText()+"' AND userID='"+userID+"' ";
+            String sqlQuery = "UPDATE note SET content= '"+noteContent.getText()+"'  WHERE noteID="+note.getNoteID();
 
             DB.update(sqlQuery);
             int i=0;
             if(isPined) i=1;
-            DB.update("UPDATE note SET isPined="+i+" WHERE title='"+noteTitle.getText()+"' AND userID='"+userID+"' ");
+            DB.update("UPDATE note SET isPined="+i+" WHERE noteID="+note.getNoteID());
             closeStage(backAndSaveButt);
         }
     }

@@ -15,8 +15,8 @@ import java.util.Map;
  */
 public class  DB {
     private final String DRIVER = "com.mysql.jdbc.Driver";
-    //private final String DATABASE_URL="jdbc:mysql://localhost:3306/organizer?useSSL=false";
     private final static String DATABASE_URL="jdbc:mysql://localhost:3306/organizer?useSSL=false";
+    //private final static String DATABASE_URL="jdbc:mysql://localhost:3306/organizer?useSSL=false";
 
     private static String userName="root";
     private static String password="yungsoon";
